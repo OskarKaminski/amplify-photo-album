@@ -19,3 +19,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.idea
+amplify/backend/api/photoalbum/build/
+amplify/#current-cloud-backend/api/photoalbum/build/

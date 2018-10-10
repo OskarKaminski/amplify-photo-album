@@ -1,0 +1,20 @@
+{
+    "projectName": "photoalbum",
+    "projectPath": "/Users/oskarkaminski/Documents/projects/photo-album",
+    "defaultEditor": "none",
+    "frontendHandler": {
+        "javascript": "/Users/oskarkaminski/.nvm/versions/node/v9.8.0/lib/node_modules/@aws-amplify/cli/node_modules/amplify-frontend-javascript"
+    },
+    "javascript": {
+        "framework": "react",
+        "config": {
+            "SourceDir": "src",
+            "DistributionDir": "build",
+            "BuildCommand": "npm run-script build",
+            "StartCommand": "npm run-script start"
+        }
+    },
+    "providers": {
+        "awscloudformation": "/Users/oskarkaminski/.nvm/versions/node/v9.8.0/lib/node_modules/@aws-amplify/cli/node_modules/amplify-provider-awscloudformation"
+    }
+}
