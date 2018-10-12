@@ -1,12 +1,13 @@
 import React from 'react';
 import {Header, List, Segment} from 'semantic-ui-react';
+import {NavLink} from 'react-router-dom';
 
 class AlbumsList extends React.Component {
     albumItems () {
         return this.props.albums.map(album =>
-            <li key={album.id}>
-                {album.owner}: {album.name}
-            </li>);
+            <List.Item key={album.id}>
+                <NavLink to={`/album/${album.id}`}>{album.name}</NavLink>
+            </List.Item>);
     }
 
     render () {
