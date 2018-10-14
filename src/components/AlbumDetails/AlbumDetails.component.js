@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Header, Segment} from 'semantic-ui-react';
 import S3ImageUpload from '../S3ImageUpload/S3ImageUpload'
+import PhotosList from '../PhotosList/PhotosList'
 
 class AlbumDetails extends Component {
     render() {
@@ -8,7 +9,7 @@ class AlbumDetails extends Component {
             <Segment>
                 <Header as='h3'>{this.props.album.name}</Header>
                 <S3ImageUpload albumId={this.props.album.id}/>
-                <p>TODO: Show photos for this album</p>
+                <PhotosList photos={this.props.album.photos.items} />
             </Segment>
         )
     }

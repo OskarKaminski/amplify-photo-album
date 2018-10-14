@@ -10,6 +10,11 @@ export const getAlbum = `query GetAlbum($id: ID!) {
       items {
         id
         bucket
+        thumbnail {
+          width
+          height
+          key
+        }
       }
       nextToken
     }
