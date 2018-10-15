@@ -37,7 +37,7 @@ Resources:
     Type: AWS::Lambda::Permission
   PhotoProcessorFunction:
     Properties:
-      CodeUri: s3://sam-deployment-ok/241aca63d65126ccab683d86f6a7c4a8
+      CodeUri: s3://sam-deployment-ok/a38cac1d47f67792036c5a8fb5927dd7
       Environment:
         Variables:
           DYNAMODB_PHOTOS_TABLE_ARN:

@@ -61,10 +61,6 @@ function storePhotoInfo(item) {
     return DynamoDBDocClient.put(params).promise();
 }
 
-async function getMetadata(bucketName, key) {
-    const headResult = await S3.headObject({Bucket: bucketName, Key: key }).promise();
-    return headResult.Metadata;
-}
 async function resize(bucketName, key) {
     const originalPhoto = (await S3.getObject({ Bucket: bucketName, Key: key }).promise()).Body;
     const originalPhotoName = key.replace('uploads/', '');
@@ -101,17 +97,15 @@ async function resize(bucketName, key) {
         }
     };
 };
-async function processRecord(record) {
-    const bucketName = record.s3.bucket.name;
-    const key = record.s3.object.key;
-    if (key.indexOf('uploads') != 0) return;
-    const metadata = await getMetadata(bucketName, key);
+async function processRecord(input) {
+    const {bucketName, key, albumId} = input;
     const sizes = await resize(bucketName, key);
+    console.log({'sizes': sizes});
     const id = uuidv4();
     const item = {
         id: id,
-        owner: metadata.owner,
-        photoAlbumId: metadata.albumid,
+        owner: 'Oskar', // use cognito
+        photoAlbumId: albumId,
         bucket: bucketName,
         thumbnail: sizes.thumbnail,
         fullsize: sizes.fullsize,
@@ -121,7 +115,8 @@ async function processRecord(record) {
 }
 exports.handler = async (event, context, callback) => {
     try {
-        event.Records.forEach(processRecord);
+        console.log({'event.input': event.input});
+        await processRecord(event.input);
         callback(null, { status: 'Photo Processed' });
     }
     catch (err) {
