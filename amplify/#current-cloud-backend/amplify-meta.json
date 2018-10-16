@@ -19,7 +19,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/photoalbum-20181004163748-deployment/amplify-cfn-templates/auth/cognito760cca9e-cloudformation-template.yml",
 				"logicalId": "authcognito760cca9e"
 			},
-			"lastPushTimeStamp": "2018-10-13T14:48:36.104Z",
+			"lastPushTimeStamp": "2018-10-16T19:22:17.362Z",
 			"output": {
 				"AppClientSecret": "8hulv954teeaubm52ck8o0d4f0ssm2rb1s8qd46rhs4b1bsg76s",
 				"UserPoolId": "us-east-1_Ce5H56hcq",
@@ -49,7 +49,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/photoalbum-20181004163748-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"logicalId": "apiphotoalbum"
 			},
-			"lastPushTimeStamp": "2018-10-13T14:48:36.105Z",
+			"lastPushTimeStamp": "2018-10-16T19:22:17.365Z",
 			"lastPushDirHash": "cBotCBQDR6pAs3cW1WnCgwNbmxk="
 		}
 	},
@@ -61,12 +61,33 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/photoalbum-20181004163748-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
 				"logicalId": "storagephotoalbumstorage"
 			},
-			"lastPushTimeStamp": "2018-10-13T14:48:36.109Z",
+			"lastPushTimeStamp": "2018-10-16T19:22:17.365Z",
 			"output": {
 				"BucketName": "photoalbuma9b9573330f14d10a9916efcc68145aa",
 				"Region": "us-east-1"
 			},
 			"lastPushDirHash": "mn+K+lc85M9Ep45wpktB3Fi6lLo="
+		}
+	},
+	"hosting": {
+		"S3AndCloudFront": {
+			"service": "S3AndCloudFront",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/photoalbum-20181004163748-deployment/amplify-cfn-templates/hosting/template.json",
+				"logicalId": "hostingS3AndCloudFront"
+			},
+			"lastPushTimeStamp": "2018-10-16T19:22:17.367Z",
+			"output": {
+				"CloudFrontSecureURL": "https://d1mvy113qnlwll.cloudfront.net",
+				"S3BucketSecureURL": "https://photoalbum-20181016210427--hostingbucket.s3.amazonaws.com",
+				"WebsiteURL": "http://photoalbum-20181016210427--hostingbucket.s3-website-us-east-1.amazonaws.com",
+				"CloudFrontDistributionID": "E3LPVR70JMXBWB",
+				"Region": "us-east-1",
+				"HostingBucketName": "photoalbum-20181016210427--hostingbucket",
+				"CloudFrontDomainName": "d1mvy113qnlwll.cloudfront.net"
+			},
+			"lastPushDirHash": "RVQiBctaXXaLq9LcyVVnE0vnsC8="
 		}
 	}
 }
