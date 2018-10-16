@@ -31,6 +31,12 @@ export const updateAlbum = `mutation UpdateAlbum($input: UpdateAlbumInput!) {
   }
 }
 `;
+export const AddUsernameToAlbumMutation = `
+      mutation AddUser($username: String!, $albumId: String!) {
+          addUsernameToAlbum(username: $username, albumId: $albumId) {
+              id
+          }
+      }`;
 export const deleteAlbum = `mutation DeleteAlbum($input: DeleteAlbumInput!) {
   deleteAlbum(input: $input) {
     id

@@ -6,6 +6,7 @@ export const getAlbum = `query GetAlbum($id: ID!) {
     id
     name
     owner
+    members
     photos {
       items {
         id
@@ -31,6 +32,7 @@ export const listAlbums = `query ListAlbums(
       id
       name
       owner
+      members
       photos {
         items {
           id

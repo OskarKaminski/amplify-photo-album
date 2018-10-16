@@ -20,7 +20,7 @@ class NewAlbum extends Component {
     handleSubmit = async (event) => {
         event.preventDefault();
 
-        const result = await API.graphql(graphqlOperation(createAlbum, {input: this.state.albumName}));
+        const result = await API.graphql(graphqlOperation(createAlbum, {input: {name: this.state.albumName}}));
         console.info(`Created album with id ${result.data.createAlbum.id}`);
     }
 
