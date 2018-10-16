@@ -1,3 +1,6 @@
+Production:
+http://photoalbum-20181016210427--hostingbucket.s3-website-us-east-1.amazonaws.com/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
