@@ -11,6 +11,7 @@ class S3ImageUpload extends React.Component {
     }
 
     onChange = async (e) => {
+        // Upload file to S3
         const file = e.target.files[0];
         const fileName = uuid();
         this.setState({uploading: true});
@@ -21,12 +22,11 @@ class S3ImageUpload extends React.Component {
                 customPrefix: {public: 'uploads/'}
             }
         );
-        console.log('Uploaded file: ', result);
+        // Resize file and return its name + thumbs urls
         await API.graphql(graphqlOperation(createPhoto, {
             input: {
-                bucketName: 'photoalbuma9b9573330f14d10a9916efcc68145aa',
-                key: `uploads/${result.key}`,
-                albumId: this.props.albumId
+                albumId: this.props.albumId,
+                key: result.key
             }
         }))
         this.setState({uploading: false});
